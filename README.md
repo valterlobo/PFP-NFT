@@ -11,3 +11,18 @@ REPORT_GAS=true npx hardhat test
 npx hardhat node
 npx hardhat run scripts/deploy.js
 ```
+
+
+
+
+npx hardhat run scripts/nft/1-upload-img.js
+npx hardhat run scripts/nft/2-gerar-json.js
+npx hardhat run scripts/nft/3-upload-json.js
+
+
+npx hardhat run scripts/nft/4-deploy.js  --network mumbai 
+
+
+
+
+

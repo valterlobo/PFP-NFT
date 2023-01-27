@@ -4,7 +4,6 @@ pragma solidity 0.8.16;
 import "solmate/src/tokens/ERC721.sol";
 import "solmate/src/utils/LibString.sol";
 import "solmate/src/auth/Owned.sol";
-//import {ERC721} from "solmate/src/aut";
 
 error MintPriceNotPaid();
 error MaxSupply();
@@ -13,7 +12,7 @@ error WithdrawTransfer();
 
 //is Owned(msg.sender)
 
-contract PfpNft is ERC721 , Owned  {
+contract PfpNft is ERC721, Owned {
     uint256 public currentTokenId;
     uint256 public constant TOTAL_SUPPLY = 10_000;
     uint256 public constant MINT_PRICE = 1 ether;
@@ -22,9 +21,9 @@ contract PfpNft is ERC721 , Owned  {
     constructor(
         string memory name,
         string memory symbol,
-        string memory base, 
-        address   owner 
-    ) ERC721(name, symbol)  Owned(owner) {
+        string memory base,
+        address owner
+    ) ERC721(name, symbol) Owned(owner) {
         baseURI = base;
     }
 
@@ -57,7 +56,7 @@ contract PfpNft is ERC721 , Owned  {
         }
         return
             bytes(baseURI).length > 0
-                ? string(abi.encodePacked(baseURI, LibString.toString(tokenId)))
+                ? string(abi.encodePacked(baseURI, '/', LibString.toString(tokenId), '.json' ))
                 : "";
     }
 

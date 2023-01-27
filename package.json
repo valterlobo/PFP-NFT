@@ -14,8 +14,9 @@
     "hardhat": "^2.12.6"
   },
   "dependencies": {
-    "@tenderly/hardhat-tenderly": "^1.5.3",
+    "csv-parse": "^5.3.3",
     "dotenv": "^16.0.3",
-    "solmate": "^6.6.1"
+    "solmate": "^6.6.1",
+    "web3.storage": "^4.4.0"
   }
 }
